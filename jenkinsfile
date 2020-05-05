@@ -1,0 +1,16 @@
+pipeline {
+   agent any
+
+   stages {
+      stage('Hello') {
+         steps {
+            git credentialsId: 'sree', url: 'https://github.com/srinivasareddy4218/loginApp.git'
+         }
+      }
+      stage('testing') {
+         steps {
+            bat label: '', script: 'cd loginApp && mvn clean package'
+         }
+      }
+   }
+}
