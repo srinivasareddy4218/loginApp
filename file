@@ -9,7 +9,7 @@ pipeline {
       }
       stage('testing') {
          steps {
-            bat label: '', script: 'cd loginApp && mvn clean package && cd target'
+            bat label: '', script: 'cd loginApp && mvn clean package && cd target && ls'
          }
       }
         stage('Deploy') {
