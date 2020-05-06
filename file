@@ -15,7 +15,7 @@ pipeline {
         stage('Deploy') {
          steps {
             sshagent(['	deploy']) {
-    sh 'scp loginApp/target/*.war sree@172.17.10.27:/C:/Users/sarikatla/Downloads/tomcat/tomcat/webapps/'
+    sh 'scp -o strictHostkeychecking=no /target/*.war sree@172.17.10.27:/C:/Users/sarikatla/Downloads/tomcat/tomcat/webapps/'
 }
          }
       }
