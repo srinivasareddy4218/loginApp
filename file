@@ -9,8 +9,8 @@ pipeline {
       }
       stage('testing') {
          steps {
-            bat label: '', script: 'cd loginApp && mvn clean package && cd target '
-            deploy adapters: [tomcat8(credentialsId: 'tomcat', path: '', url: 'http://localhost:9090')], contextPath: 'loginApp/target/' , war: '**/*.war'
+            bat label: '', script: ' cd loginApp && mvn clean package && cd target '
+            deploy adapters: [tomcat8(credentialsId: 'tomcat', url: 'http://localhost:9090')], contextPath: 'loginApp/target/' , war: '**/*.war'
             
          }
       }
