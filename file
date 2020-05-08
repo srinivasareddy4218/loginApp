@@ -8,7 +8,8 @@ pipeline {
      stage('compile-package-create-war-file')
          bat label: '', script: ' cd loginApp && mvn clean package && cd target '
          }
-        stage('deploy to tomcat'){
+        stages{
+        stage('deploy to tomcat')
             
         }
         
