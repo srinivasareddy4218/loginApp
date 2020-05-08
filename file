@@ -1,19 +1,19 @@
 pipeline {
    agent any
 
-   stages {
+   stages{
       stage('building') {
          steps {
             git credentialsId: 'sree', url: 'https://github.com/srinivasareddy4218/loginApp.git'
          }
       }
-      stages {
+      stages{
        stage('testing'){
          steps {
             bat label: '', script: ' cd loginApp && mvn clean package && cd target '
             }
           }  
-          stagse {
+          stagse{
           stage('deploy to tomcat'){
         steps{    
          deploy adapters: [tomcat8(credentialsId: 'tomcat', path: '', url: 'http://localhost:9090')], contextPath: null , war: '**/*.war'
