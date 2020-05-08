@@ -7,7 +7,7 @@ pipeline {
             git credentialsId: 'sree', url: 'https://github.com/srinivasareddy4218/loginApp.git'
          }
       }
-      stages{
+      stage{
        stage('testing'){
          steps {
             bat label: '', script: ' cd loginApp && mvn clean package && cd target '
