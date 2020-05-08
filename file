@@ -7,21 +7,18 @@ pipeline {
             git credentialsId: 'sree', url: 'https://github.com/srinivasareddy4218/loginApp.git'
          }
       }
-      stage{
-       stage('testing'){
+            stage('testing'){
          steps {
             bat label: '', script: ' cd loginApp && mvn clean package && cd target '
             }
           }  
-          stagse{
-          stage('deploy to tomcat'){
+         stage('deploy to tomcat'){
         steps{    
          deploy adapters: [tomcat8(credentialsId: 'tomcat', path: '', url: 'http://localhost:9090')], contextPath: null , war: '**/*.war'
          }
         }
      }     
   }
- } 
-}
+
 
 
