@@ -1,9 +1,11 @@
 pipeline { 
     agent any
-       stage('scm checkout'){
+       stages{
+        stage('git checkout')
         git credentialsId: 'sree', url: 'https://github.com/srinivasareddy4218/loginApp.git'
     }
-    stage('compile-package-create-war-file'){
+    stages{
+     stage('compile-package-create-war-file')
          bat label: '', script: ' cd loginApp && mvn clean package && cd target '
          }
         stage('deploy to tomcat'){
