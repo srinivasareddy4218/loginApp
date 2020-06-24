@@ -23,7 +23,7 @@ pipeline {
         script {
           withCredentials([string(credentialsId:'DockerPWD',variable:'DockerPWD')]){
             sh "docker login -u srinivasareddy4218 -p ${DockerPWD}"
-          sh "docker push srinivasareddy4218/docker-kubernetes:${DOCKER_TAG}"
+          sh "docker push srinivasareddy4218/docker-kubernetes:${BUILD_NUMBER}"
         }
        }   
       }
