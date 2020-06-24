@@ -18,6 +18,14 @@ pipeline {
         }
       }
     }
+    stage('Building image push') {
+      steps{
+        script {
+          withCredentials([string(credentialsId:'Dockerhub',variable:'dockerpwd')])
+            sh "sudo docker login -u srinivasareddy4218 -p ${dockerhubpwd}"
+        }
+      }
+    }
     stage('Deploy Image') {
       steps{
         script {
