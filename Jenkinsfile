@@ -1,7 +1,7 @@
 pipeline {
   environment {
     registry = "srinivasareddy4218/docker-kubernetes"
-    registryCredential = 'dockerhub'
+    registryCredential = 'Dockerhub'
     dockerImage = ''
   }
   agent any
@@ -21,8 +21,8 @@ pipeline {
     stage('Building image push') {
       steps{
         script {
-          withCredentials([string(credentialsId:'dockerhub',variable:'dockerhub')])
-            sh "sudo docker login -u srinivasareddy4218 -p ${dockerhub}"
+          withCredentials([string(credentialsId:'Dockerhub',variable:'Dockerhub')])
+            sh "sudo docker login -u srinivasareddy4218 -p ${Dockerhub}"
         }
       }
     }
