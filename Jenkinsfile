@@ -22,7 +22,7 @@ pipeline {
       steps{
         script {
           withCredentials([string(credentialsId:'Dockerhub',variable:'Dockerhub')]){
-            sh "sudo docker login -u srinivasareddy4218 -p Sree@4218"
+            sh "sudo docker login -u srinivasareddy4218 -p ${Dockerhub}"
           sh "sudo docker push srinivasareddy4218/docker-kubernetes:${DOCKER_TAG}"
         }
        }   
