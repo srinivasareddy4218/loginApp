@@ -21,8 +21,8 @@ pipeline {
     stage('Building image push') {
       steps{
         script {
-          withCredentials([string(credentialsId:'Dockerhub',variable:'Dockerhub')]){
-            sh "sudo docker login -u srinivasareddy4218 -p ${Dockerhub}"
+          withCredentials([string(credentialsId:'DockerPWD',variable:'DockerPWD')]){
+            sh "sudo docker login -u srinivasareddy4218 -p ${DockerPWD}"
           sh "sudo docker push srinivasareddy4218/docker-kubernetes:${DOCKER_TAG}"
         }
        }   
