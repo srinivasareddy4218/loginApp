@@ -1,7 +1,6 @@
 pipeline {
   environment {
-    DOCKER_TAG = getDockerTag()
-    registry = "srinivasareddy4218/docker-kubernetes"
+     registry = "srinivasareddy4218/docker-kubernetes"
     registryCredential = 'Dockerhub'
     dockerImage = ''
   }
