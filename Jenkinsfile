@@ -21,8 +21,8 @@ pipeline {
     stage('Building image push') {
       steps{
         script {
-          withCredentials([string(credentialsId:'Dockerhub',variable:'dockerpwd')])
-            sh "sudo docker login -u srinivasareddy4218 -p ${dockerhubpwd}"
+          withCredentials([string(credentialsId:'dockerhub',variable:'dockerhub')])
+            sh "sudo docker login -u srinivasareddy4218 -p ${dockerhub}"
         }
       }
     }
