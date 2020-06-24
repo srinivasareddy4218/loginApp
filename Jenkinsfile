@@ -8,7 +8,7 @@ pipeline {
   stages {
     stage('Cloning Git') {
       steps {
-        git 'https://github.com/srinivasareddy4218/loginApp.git'
+        git credentialsId: 'jenkins', url: 'https://github.com/srinivasareddy4218/loginApp.git'
       }
     }
     stage('Building image') {
