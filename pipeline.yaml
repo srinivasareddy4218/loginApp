@@ -6,7 +6,7 @@ spec:
   params:
     - name: BUILDER_IMAGE
       description: The image on which builds will run
-      default: myapp:latest
+      default: loginapp:latest
   resources:
     - name: source
       type: git
